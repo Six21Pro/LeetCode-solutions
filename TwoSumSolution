@@ -1,0 +1,7 @@
+class Solution(object):
+  def twoSum(self, nums, target):
+    for i in range(len(nums)):
+      for j in range(len(nums)):
+        reach = nums[i]+nums[j]
+        if reach == target and j!=i:#I don't want an element matching with itself
+          return [i,j]#returns the positions of the array that add up to the target
