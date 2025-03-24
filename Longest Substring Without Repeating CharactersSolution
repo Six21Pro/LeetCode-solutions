@@ -1,0 +1,18 @@
+class Solution1(object):
+  def lengthOfLongestSubstring(self, s):
+    checkArray = []
+    possibleArray = []
+    for i in range(len(s)):
+      if s[i] in checkArray:
+        #print(checkArray, "length: ", len(checkArray))
+        possibleArray.append(checkArray)
+        checkArray = []
+      if s[i]  not in checkArray:
+        checkArray.append(s[i])
+    hold = 0
+    holdArr = []
+    for k in range(len(possibleArray)):
+      if len(possibleArray[k]) > hold:
+        hold = len(possibleArray[k])
+        holdArr = possibleArray[k]
+    print(holdArr," is the longest nonrepeating substring with a length of ", hold)    
