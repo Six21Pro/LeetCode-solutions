@@ -1,0 +1,43 @@
+#This is somewhat messy but it works
+class Solution2(object):
+  def longestPalindrome(self, s):
+    checkArray = []
+    checkStr = 'a'
+    possibleArray = []
+    long = 'a'
+    
+    for i in range(len(s)):
+      checkAppear = s[i]
+      for k in range(len(s)):
+        if s[k] == checkAppear and k is not i and k > i:
+          #print('match for ', i, 'th char: ',s[k],' at ', k)
+          possBegin = s[k]
+          checkStr = s[i:k+1]
+          tf = self.isPalindrome(checkStr)
+          if tf == True and len(long)<len(checkStr):
+            long = checkStr
+          tf = False
+    print('longest palindrome: ', long)
+      #print(possBegin)
+  def isPalindrome(self, s):
+    if len(s) % 2 == 0:
+      #size = len(s) // 2
+      print('size: ', len(s))
+      #i = size
+      hey = len(s)-1
+      for i in range(hey):
+        if s[i] != s[hey-i]:
+          return False
+      return True    
+    if len(s) % 2 != 0:
+      mid = len(s) / 2
+      mid = int(mid+0.5)
+      print('mid: ', mid)
+      hey = len(s)-1
+      for i in range(hey):
+        if s[i] != s[hey-i] and hey-i!=mid:
+          return False
+      return True
+        
+        
+    return 0
