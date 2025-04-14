@@ -1,0 +1,40 @@
+class Solution3(object):
+  def reverse(self, x):
+    retInt = False
+    if x is int:#if passed an int, return an int, else i return a string
+      retInt = True
+    newStr = ''
+    x = str(x)#my solution is really just reversing strings, but it can work for ints    
+
+    reverseStartPoint = len(x)-1
+    lenToAppend = len(x)-1
+    appendNegative = False
+    appendinLeng = len(x)
+      
+    if x[0] == '-':
+        #print("negative")#debugging
+      appendNegative = True
+      lenToAppend = len(x)-2
+        #print(lenToAppend)#debugging
+      appendinLeng = len(x)-1
+        
+    if x[len(x)-1] == '0':
+        #print("ends with 0")#debugging
+      reverseStartPoint = len(x)-2
+      for i in range(lenToAppend):
+         newStr = newStr + x[reverseStartPoint-i]
+         # print(newStr)#debugging
+    else:
+        #print("does not end with 0")#debugging
+      for i in range(appendinLeng):
+        newStr = newStr + x[reverseStartPoint-i]
+          #print(newStr)#debugging
+          
+    if appendNegative:
+        #print("appending negative")#debugging
+       newStr = '-'+newStr
+       x = newStr
+    x = newStr
+    if retInt:
+      x = int(x)
+    return x
