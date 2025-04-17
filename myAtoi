@@ -1,0 +1,58 @@
+class Solution4(object):
+  def myAtoi(self, s):
+    finalInt = ''
+    noMoWhtSpaces = False
+    signEncountered = False
+    for i in range(len(s)):
+
+      if s[i-1]=='+' and s[i] =='0' or s[i-1]=='-' and s[i] =='0':
+        try:
+          return int(finalInt)
+        except:
+          print("That wasn't a number!")
+        else:
+          return 0
+        return 0
+      if noMoWhtSpaces and s[i].isspace():#this is a function apparently
+        try:
+          return int(finalInt)
+        except:
+          print("That wasn't a number!")
+        else:
+          return 0
+        return 0
+      
+        
+      if signEncountered and s[i] == '+' or s[i] == '-' and signEncountered:
+        print('more than one sign')
+        try:
+          return int(finalInt)
+        except:
+          print("That wasn't a number!")
+        else:
+          return 0
+        return 0
+      if s[i] == '+' or s[i] == '-':
+        signEncountered = True
+        noMoWhtSpaces = True
+        print('sign encountered')
+      if s[i].isdigit():#this is a function apparently
+        noMoWhtSpaces = True  
+        signEncountered = True
+      
+      if s[i].isalpha():#this is a function apparently
+        signEncountered = True#I think these can be here
+        noMoWhtSpaces = True
+        #print(s[i])
+        try:
+          return int(finalInt)
+        except:
+          print("That wasn't a number!")
+        else:
+          return 0
+        return 0
+        
+      finalInt = finalInt + s[i]
+    if finalInt != '':
+      return int(finalInt)
+    return 0  
