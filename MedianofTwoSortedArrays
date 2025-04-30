@@ -1,0 +1,14 @@
+class Solution5(object):
+  def findMedianSortedArrays(self, nums1, nums2):
+    nums3 = nums1 + nums2
+    nums3.sort()
+    print(nums3)
+    if len(nums3) % 2 != 0:
+     print(nums3[len(nums3)//2])#appparently the // operator only returns whole numbers
+     return (nums3[len(nums3)//2])
+    else:
+      median = nums3[len(nums3)//2]+nums3[(len(nums3)//2)-1]
+      median = median/2
+      print(median)
+      return(median)
+#I haven't yet checked the time complexity
