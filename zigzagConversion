@@ -1,0 +1,31 @@
+class Solution6(object):
+  
+  
+  def zigzag(self, s, numRows):
+    k, r = 0,0
+    j = 0
+    down = True
+    #zigArray = [4][4]#may not be good.# doesn't work like this in pytohn
+    zigArray = [[0 for _ in range(len(s)//2)] for _ in range(numRows)]
+    #columns, rows
+
+    for i in range(len(s)):
+      if k == numRows:
+        k= k-2
+      #if i%3 == 0 and i != 0:#no
+        #r +=1
+      if k == numRows-1:
+        down = False
+        #r += 1
+      if k == 0 and i != 0:
+        down = True
+      #if j == 3:#this is the issue it shouldn't be every third letter, I need a zig zag somehow
+   
+      zigArray[k][r]=s[i]#r for move right, k for move down or up
+
+      if down: 
+        k += 1
+      if not down:
+        k -= 1
+        r+=1
+    print(zigArray)  
