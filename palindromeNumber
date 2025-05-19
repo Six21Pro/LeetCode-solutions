@@ -1,0 +1,13 @@
+class Solution7(object):
+  def isPalindrome(self, x):
+    x = str(x)#can this be done without a string conversion?
+    for i in range(len(x)):
+     # print(x[i])
+      #print(x[len(x)-i-1])
+      #print("next")
+      if x[i] != x[len(x)-i-1]:
+        print("false because", x[i], " isn't the same as", x[len(x)-i-1])
+        print("NOT A PALINDROME")
+        return False
+    print("WE HAVE A PALINDROME: ", x)
+    return True
