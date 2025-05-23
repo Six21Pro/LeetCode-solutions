@@ -1,0 +1,7 @@
+import re
+class Solution8(object):
+  def isMatch(self, s, p):
+    pattern1 = re.compile(p)
+    here1 = re.fullmatch(p, s)#in prior programs I have used re.findall, but I think re.fullmatch forces an exact match, which is what I need for this problem
+    if here1:
+      return True
