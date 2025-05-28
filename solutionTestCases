@@ -1,0 +1,86 @@
+from twosum import Solution
+from longestNonrepeatingSubstring import Solution1
+from longestPalindromicSubstring import Solution2
+from reverse import Solution3
+from myAtoi import Solution4
+from MedianofTwoSortedArrays import Solution5
+from zigzagConversion import Solution6
+from palindromeNumber import Solution7
+from regularExpressionMatching import Solution8
+from containerWithMostWater import Solution9
+
+sol = Solution()
+non = Solution1()
+pal = Solution2()
+rev = Solution3()
+atoi = Solution4()
+med = Solution5()
+zig = Solution6()
+palN = Solution7()
+regExpM = Solution8()
+bucket = Solution9()
+
+print(bucket.maxArea([1,1,1,8,6,1,2,5,4,3,7]))
+
+match = regExpM.isMatch("aa", "a")
+print(match)
+match = regExpM.isMatch("fjjfdbfjb", ".*")
+print(match)
+match = regExpM.isMatch("aaaaaab", "a.*")
+print(match)
+match = regExpM.isMatch("aaaaaabc", "a.*b")
+print(match)
+match = regExpM.isMatch("aaaaaaba", ".a")
+print(match)
+
+
+
+palN.isPalindrome(1234567890)
+palN.isPalindrome(54645)
+
+zig.zigzag("PAYPALISHIRING", 4)# currently missing a p and an i
+zig.zigzag("MCDSICECREAMMACHINEDOWN", 5)# currently missing a p and an i
+
+med.findMedianSortedArrays([1,14],[2,8,12])
+at = atoi.myAtoi('   -042')
+print(at)
+at = atoi.myAtoi('42')
+print(at)
+at = atoi.myAtoi('1337c0d3')
+print(at)
+at = atoi.myAtoi('    -421')
+print(at)
+at = atoi.myAtoi('    +421')
+print(at)
+at = atoi.myAtoi('    -66+')
+print(at)
+at = atoi.myAtoi(' 5   -21')
+print(at)
+at = atoi.myAtoi('    +42')
+print(at)
+at = atoi.myAtoi('  aa  -42')
+print(at)
+
+at = atoi.myAtoi('words and 987')
+print(at)
+
+reversedWord= rev.reverse('hello')
+print(reversedWord)
+reversedWord= rev.reverse('-apple')
+print(reversedWord)
+reversedWord= rev.reverse('banana0')
+print(reversedWord)
+reversedWord= rev.reverse('-peach0')
+print(reversedWord)
+reversedWord= rev.reverse(12345)
+print(reversedWord)
+reversedWord= rev.reverse(-98765)
+print(reversedWord)
+reversedWord= rev.reverse(-120)
+print(reversedWord)
+#pal.longestPalindrome("alalalalalazzzzzzzzzzbbddddcccccc")
+#pal.longestPalindrome("abcabbcbcdddddeedeedee")
+non.lengthOfLongestSubstring("abcabczxfbb")
+
+twosoumRes = sol.twoSum([2,7,11,15], 18)
+print(twosoumRes)
