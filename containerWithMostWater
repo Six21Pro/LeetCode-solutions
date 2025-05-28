@@ -1,0 +1,44 @@
+#need to remember that the correct solution is the second highest height multiplied by itself
+#nevermind,its the second tallest height time the 'x-axis distance'
+class Solution9(object):
+  def maxArea(self, height):
+    tallest = 0
+    secondTallest = 0
+    x1 =0 #for x-axis1
+    x2 = 0 #for x-axis2
+    for i in range(len(height)):
+      if height[i] >= tallest:#handles if we get two matching heights
+        secondTallest = height[i]
+        x2 = i
+        #tallest = height[i]
+        #x1 = i
+      if height[i] > tallest:
+        secondTallest = tallest
+        x2 = x1
+        tallest = height[i]
+        x1 = i
+      
+    if x2 != 0:
+      print("second tallest: ", secondTallest)
+      return(abs(secondTallest * (x2-x1)))
+      
+    if x2 == 0:#this should handle the case where the tallest entry is encountered first, because this checks the array in reverse
+      tallest = 0
+      secondTallest = 0
+      x1 =0 #for x-axis1
+      x2 = 0 #for x-axis2
+      for i in range(len(height)):
+        if height[i] >= tallest:#handles if we get two matching heights
+          secondTallest = height[len(height)-i-1]
+          x2 = len(height)-i-1
+          #tallest = height[i]
+          #x1 = i
+        if height[len(height)-i-1] > tallest:
+          secondTallest = tallest
+          x2 = x1
+          tallest = height[len(height)-i-1]
+          x1 = len(height)-i-1 
+          print(x1)
+          print(i)
+    print("sfdsfhpafhi tallest: ", secondTallest, x2)
+    return(abs(secondTallest * (x2-x1))) #return absolute value
