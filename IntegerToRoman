@@ -1,0 +1,127 @@
+#I feeel like this is one of my poorer solutions. I think some metgodology could make this code less manual, but given the nature of roman numerals, its probably only so practical.
+#I'm only working with roman numerals up to MMM, as leetcode specified, nothing more for now.
+class Solution10(object):
+  #I could sequentially move through each number.
+  def intToRoman(self, num):
+    romanString = ''
+    k = num % 1000
+    print(k)
+    if num / 1000 > 1:
+      
+     # k = str(k)
+      #k = int(k)
+      
+      romanString = romanString + "M"
+      if num >= 2000:
+        romanString = romanString + "M"
+      if num >= 3000:
+        romanString = romanString + "M"
+      #num = num - k * 1000
+      
+      num = k
+      
+    if int(num / 100) >= 5 and int(num / 100)!= 9:
+      romanString = romanString + "D"
+      if num >= 600:
+        romanString = romanString + "C"
+      if num >= 700:
+        romanString = romanString + "C"
+      if num >= 800:
+        romanString = romanString + "C"
+      #num = num - k * 100
+      k = num % 100
+      print(k)
+      num = k
+    if int(num / 100) == 4:
+      romanString = romanString + "CD"
+      #num = num - k * 100
+      k = num % 100
+      #print(k)
+      num = k
+    if int(num / 100) == 9:
+      romanString = romanString + "CM"
+      #num = num - k * 100
+      k = num % 100
+      #print(k)
+      num = k
+    if int(num / 100) >= 1 and int(num / 100) < 4:
+      romanString = romanString + "C"
+      if num >= 200:
+        romanString = romanString + "C"
+      if num >= 300:
+        romanString = romanString + "C"
+      #num = num - k * 100
+      k = num % 100
+      #print(k)
+      num = k
+    if int(num / 10) >= 5 and int(num / 10)!= 9:
+      romanString = romanString + "L"
+      if num >= 60:
+        romanString = romanString + "X"
+      if num >= 70:
+        romanString = romanString + "X"
+      if num >= 80:
+        romanString = romanString + "X"
+      #num = num - k * 100
+      k = num % 10
+      print(k)
+      num = k
+    if int(num / 10) == 4:
+      romanString = romanString + "XL"
+      #num = num - k * 100
+      k = num % 10
+      #print(k)
+      num = k
+    if int(num / 10) == 9:
+      romanString = romanString + "XC"
+      #num = num - k * 100
+      k = num % 10
+      #print(k)
+      num = k
+    if int(num / 10) >= 1 and int(num / 10) < 4:
+      romanString = romanString + "X"
+      if num >= 2:
+        romanString = romanString + "X"
+      if num >= 3:
+        romanString = romanString + "X"
+      #num = num - k * 100
+      k = num % 10
+      #print(k)
+      num = k
+    if int(num / 1) >= 5 and int(num / 1)!= 9:
+      romanString = romanString + "V"
+      if num >= 6:
+        romanString = romanString + "I"
+      if num >= 7:
+        romanString = romanString + "I"
+      if num >= 8:
+        romanString = romanString + "I"
+      #num = num - k * 100
+      k = num % 10
+      print(k)
+      num = k
+    if int(num / 1) == 4:
+      romanString = romanString + "IV"
+      #num = num - k * 100
+      k = num % 1
+      #print(k)
+      num = k
+    if int(num / 1) == 9:
+      romanString = romanString + "IX"
+      #num = num - k * 100
+      k = num % 1
+      #print(k)
+      num = k
+    if int(num / 1) >= 1 and int(num / 1) < 4:
+      romanString = romanString + "I"
+      if num >= 2:
+        romanString = romanString + "I"
+      if num >= 3:
+        romanString = romanString + "I"
+      #num = num - k * 100
+      k = num % 10
+      #print(k)
+      num = k
+    
+    return romanString
+      
