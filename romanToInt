@@ -1,0 +1,57 @@
+class Solution11(object):
+  def romanToInt(self, s):
+    s = str(s)
+    myInt = 0
+    holder = 1 #this int to prevent index out of range errors
+    skip = False # to prevent makeing additions based on, say the 'X' in 'IX', after correctily adding 9
+    #need to ensure to deal with IX's and such
+    for i in range(len(s)):
+      if skip == True:
+        skip = False
+        continue
+      if i == len(s)-1:
+        print("reached length limit of the string")
+        holder = 0
+      if s[i] == "I" and s[i+holder] != "V" and s[i+holder] != "X":
+        myInt += 1
+        #print("yep")
+      if s[i] == "X" and s[i+holder] != "L" and s[i+holder] != "C":
+        myInt += 10
+        print("yep")
+      if s[i] == "C" and s[i+holder] != "D" and s[i+holder] != "M":
+        myInt += 100
+        print("yep")
+      if s[i] == "V":
+        myInt += 5
+      if s[i] == "L":
+        myInt += 50
+      if s[i] == "D":
+        myInt += 500
+      if s[i] == "M":
+        myInt += 1000
+      if s[i] == "I" and s[i+holder] == "V":
+        myInt += 4
+        skip = True
+        continue
+      if s[i] == "I" and s[i+holder] == "X":
+        myInt += 9
+        skip = True
+        continue
+      if s[i] == "X" and s[i+holder] == "L":
+        myInt += 40
+        skip = True
+        continue
+      if s[i] == "X" and s[i+holder] == "C":
+        myInt += 90
+        skip = True
+        continue
+      if s[i] == "C" and s[i+holder] == "D":
+        myInt += 400
+        skip = True
+        continue
+      if s[i] == "C" and s[i+holder] == "M":
+        myInt += 900
+        skip = True
+        continue
+      
+    print(myInt,"the value of your roman numeral")
