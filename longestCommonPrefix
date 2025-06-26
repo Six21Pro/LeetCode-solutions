@@ -1,0 +1,71 @@
+###So for awhile I was attempting to find the most common prefix, which I later realized the question was not asking for. I did not finish finding the most common prefix, instead i found the longest common prefix ( the longest prefix shared by at least 2 words)
+
+
+class Solution12(object):
+  def longestCommonPrefix(self, strs):
+    currentCount = 0#for detemining which prefix was found the most
+    highCount = 0#for detemining which prefix was found the most
+    mostCommonPrefix = ''
+    lcp = ''#longest common prefix
+    possiblePrefixs = []
+    listPrefixs = []
+    intoList = ''
+    for i in range(len(strs)):
+      firstWord = strs[i]
+      for j in range(len(strs)):
+        if i != j and j> i:
+          secondWord = strs[j]
+          intoList = self.prefixFinder(firstWord, secondWord)
+          listPrefixs.append(intoList)
+          #break#not quite
+    #print(listPrefixs)
+    for i in range(len(listPrefixs)):###THIS IS TECHNICALLY WHAT THE WUESTION ASKED FOR
+      if len(listPrefixs[i]) > len(lcp):
+        lcp = listPrefixs[i]
+        
+    for i in range(len(listPrefixs)):
+      firstPre = listPrefixs[i]
+      
+        
+      highCount = currentCount
+      currentCount = 0
+      for j in range(len(listPrefixs)):
+        
+        if i != j:
+          secondPre = listPrefixs[j]
+          if firstPre == secondPre and len(firstPre) != 0:
+            currentCount += 1
+           # print(currentCount)#for testing
+         
+      if currentCount > highCount:
+        mostCommonPrefix = firstPre
+    print(mostCommonPrefix)
+    print("longest common prefix->",lcp)
+    #print(len(firstPre))#for testing
+    return lcp
+
+  def prefixFinder(self, word1, word2):
+    prefixLen = len(word1)
+    prefixRet= 0
+    nonMatch = False
+    allMatch = False
+    if len(word1) > len(word2):#this is a problem
+      prefixLen = len(word2)
+   # while nonMatch is False:
+      #print('bug')
+    for i in range(prefixLen):
+        #flow entirely matching flower is an issue
+      if word1[i] != word2[i]:
+        nonMatch is True
+        prefixRet = i
+          #print(i)
+        break
+      if i == prefixLen-1:
+        allMatch = True
+        prefixRet = i+1
+          #print(i+1)
+        break
+    prefix = word1[0:prefixRet]  #I'll return the prefix from tow words and add them to a list
+    
+    return prefix
+ 
