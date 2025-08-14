@@ -1,0 +1,55 @@
+class Solution13(object):
+
+  def threeSum(self, nums):
+    dontApp = False #prevents unnecassary appending
+    addToZeroSet = [] #set we will return or unique triplets
+    for i in range(len(nums)):
+      num1 = nums[i]
+      for k in range(len(nums)):
+        if k > i:#prents num2 from being the same as num1
+          num2 = nums[k]
+        else:
+          continue
+        for j in range(len(nums)):
+          if j > k:
+            num3 = nums[j]
+          else:
+            continue
+          num3 = nums[j]
+          if num1 + num2 + num3 == 0 and i != k and k != j and i != j:#checks for addition to zero
+            print("found an addition to 0")
+
+            if len(addToZeroSet) == 0:
+              addToZeroSet.append([num1, num2, num3])
+              continue
+            else:
+              dontApp = False
+              for l in range(len(addToZeroSet)):
+                addy = addToZeroSet[l]
+                addy2 = [num1, num2, num3]
+                #the beloww is a really messy way to check for unique combinations of triplets without duplicates. (aka same numbers in different orders)
+                if addy[0] == addy2[0] and addy[1] == addy2[1] and addy[
+                    2] == addy2[2] or (
+                        addy[0] == addy2[1] and addy[1] == addy2[0]
+                        and addy[2] == addy2[2]
+                    ) or (
+                        addy[0] == addy2[2] and addy[1] == addy2[0]
+                        and addy[2] == addy2[1]
+                    ) or addy[0] == addy2[0] and addy[1] == addy2[2] and addy[
+                        2] == addy2[1] or addy[0] == addy2[1] and addy[
+                            1] == addy2[2] and addy[2] == addy2[0]:
+                  print("already in the list")
+                  dontApp = True
+              if dontApp is False:
+                addToZeroSet.append([num1, num2, num3])
+
+    #addy = addToZeroSet[0]
+    #addy2 = addToZeroSet[2]
+    #print(addy)
+
+    #print(addy2[1])
+
+    print(addToZeroSet)
+    return addToZeroSet
+
+# I spent some time earlier working on a way to remove duplicates from my returen set, but I eventually realized it was much more effiecient for me  to check for duplicats before adding them to the set. Which led to my current solution for this leetcode problem.
