@@ -1,0 +1,101 @@
+Skip to content
+Search 12,600+ of our books and courses
+
+
+Menu
+Sign in
+Daily Coding Challenge
+May 14, 2026
+Instructions
+main.pyEditor
+JavaScript
+Python
+Console
+Hide the terminalTerminal
+Move the terminal to a new window and focus it
+Mirror Image
+Given two strings, determine if the second string is a mirror image of the first.
+
+A mirror image is formed by reversing the string and replacing each character with its mirror equivalent.
+
+Symmetric characters look like themselves in a mirror:
+W, T, Y, U, I, O, H, A, X, V, M, w, o, x, v, 0, 8, =, +, :, |, -, _, *, ^, !, ., and the space ( ).
+
+Mirrored pairs swap with each other in a mirror:
+Character	Swaps with
+[	]
+{	}
+<	>
+b	d
+p	q
+(	)
+If either string includes a character not in the lists above, it doesn't have mirror image that can be created from the characters.
+
+For example, the mirrored image of "[HOW]" is "[WOH]".
+
+Tests:
+Passed:1. is_mirror_image("[HOW]", "[WOH]") should return True.
+Passed:2. is_mirror_image("MOM", "MOM") should return True.
+Passed:3. is_mirror_image("vow", "wov") should return True.
+Passed:4. is_mirror_image("TIM", "TIM") should return False.
+Passed:5. is_mirror_image("{WOW}", "}WOW{") should return False.
+Passed:6. is_mirror_image("XXVII", "IIV%X") should return False.
+Passed:7. is_mirror_image("><(((*>", "<*)))><") should return True.
+Passed:8. is_mirror_image("WTYUIOHAXVMwoxv08=+:|-_*^!.[]{}<>bdpq()", "()pqbd<>{}[].!^*_-|:+=80vxowMVXAHOIUYTW") should return True.
+14151312101191617181920212223
+def is_mirror_image(s1, s2):
+
+    u = 0
+    d = len(s2) - 1
+    for i in range(len(s1)):
+        if s1[u] == '{' and s2[d] == '{':#this would need to be repeated for the other mirror characters
+                return False
+        if s1[u] != s2[d]:#if the fisrt char …#is_mirror_image("[HOW]", "[WOH]")
+158def is_mirror_image(s1, s2):    for i in range(len(s1)):        if s1[u] != s2[d]:#if the fisrt char 
+Submit and continue
+
+
+Navigated to Learn to Code — For Free — Coding Courses for Busy People
+
+-----------------------------------------------------------------------------------------------------------
+def is_mirror_image(s1, s2):
+
+    u = 0
+    d = len(s2) - 1
+    for i in range(len(s1)):
+        if s1[u] == '{' and s2[d] == '{':#this would need to be repeated for the other mirror characters
+                return False
+        if s1[u] != s2[d]:#if the fisrt char of the first word and the last char of the second word don't match, these are the exceptions
+            if s1[u] == ']' and s2[d] == '[':
+                continue
+            elif s1[u] == '[' and s2[d] == ']':
+                continue
+            elif s1[u] == '{' and s2[d] == '}':
+                continue
+            elif s1[u] == '}' and s2[d] == '{':
+                continue
+            elif s1[u] == '(' and s2[d] == ')':
+                continue
+            elif s1[u] == ')' and s2[d] == '(':
+                continue
+            elif s1[u] == '<' and s2[d] == '>':
+                continue
+            elif s1[u] == '>' and s2[d] == '<':
+                continue
+            
+            else:
+                 return False
+            #return False
+        else:
+            u+= 1
+            d-= 1
+    u = 0
+    for i in range(len(s1)):#Characters must be mirrorable. For example, r,c,k do not have symmetric qualities
+        
+        if s1[u] not in ('W' , 'T' , 'Y' , 'U'  ,  'I'  ,'O' ,'H'  ,'A' , 'X' ,'V' , 'M' , 'w'  ,'o' , 'x'  ,'v' , '0'  , '8' , '=' ,'+' , ':' , '|' ,'-' , '_' , '*' ,'^' ,'!' ,'.' ,' ','[',']','{','}','<','>','b','d','p','q','(',')'):
+            return False
+
+    s1 = True
+    return s1
+#is_mirror_image('cac','cac')
+#is_mirror_image("[HOW]", "[WOH]")
