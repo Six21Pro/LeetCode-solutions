@@ -1,0 +1,70 @@
+Skip to content
+Search 12,600+ of our books and courses
+
+
+Menu
+Sign in
+Daily Coding Challenge
+May 19, 2026
+Instructions
+main.pyEditor
+JavaScript
+Python
+Console
+Hide the terminalTerminal
+Move the terminal to a new window and focus it
+Sleep Debt
+Given an array of hours slept each night leading up to today, and a target number of hours per night, return how many hours of sleep you need tonight to eliminate your sleep debt.
+
+Include tonight's hours in the total time needed to catch up.
+If you've slept enough to cover tonight's target or more, return 0.
+Tests:
+Passed:1. sleep_debt([6, 6, 6, 6, 6, 6], 8) should return 20.
+Passed:2. sleep_debt([6, 7, 8, 4, 8, 6], 7) should return 10.
+Passed:3. sleep_debt([10, 10, 9, 10, 9, 11], 9) should return 4.
+Passed:4. sleep_debt([8, 7, 6, 7, 6, 8], 6) should return 0.
+Passed:5. sleep_debt([8, 9, 10, 9, 10, 7], 7) should return 0.
+1672108431315141611125917
+def sleep_debt(hours_slept, target_hours):
+    slept = 0
+    finalTarget = target_hours * len(hours_slept)
+    print(hours_slept[1])
+    print(finalTarget)
+    for i in range(len(hours_slept)):
+       slept = slept + hours_slept[i]
+       print(slept)
+       #weirdly need to remeber and include tonights expected sleep
+    totalDebt = finalTarget + target_hours - slept
+    print(slept)
+    print(totalDebt)
+    if totalDebt < 0:
+        totalDebt = 0
+        return totalDebt
+    
+    return totalDebt
+Submit and continue
+
+
+
+/**
+* Your test output will go here
+*/
+Navigated to Daily Coding Challenge: Bingo Range | freeCodeCamp.org
+--------------------------------------------------------------------------------------------------------
+def sleep_debt(hours_slept, target_hours):
+    slept = 0
+    finalTarget = target_hours * len(hours_slept)
+    print(hours_slept[1])
+    print(finalTarget)
+    for i in range(len(hours_slept)):
+       slept = slept + hours_slept[i]
+       print(slept)
+       #weirdly need to remeber and include tonights expected sleep
+    totalDebt = finalTarget + target_hours - slept
+    print(slept)
+    print(totalDebt)
+    if totalDebt < 0:
+        totalDebt = 0
+        return totalDebt
+    
+    return totalDebt
