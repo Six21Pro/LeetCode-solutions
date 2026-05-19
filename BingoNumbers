@@ -1,0 +1,124 @@
+Skip to content
+Search 12,600+ of our books and courses
+
+
+Menu
+Sign in
+Daily Coding Challenge
+May 18, 2026
+Instructions
+main.pyEditor
+JavaScript
+Python
+Console
+Hide the terminalTerminal
+Move the terminal to a new window and focus it
+Bingo Range
+Given a bingo letter, return the number range associated with that letter.
+
+Letter	Number Range
+"B"	1-15
+"I"	16-30
+"N"	31-45
+"G"	46-60
+"O"	61-75
+Return an array with all numbers in the range from smallest to largest.
+
+Tests:
+Passed:1. get_bingo_range("B") should return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].
+Passed:2. get_bingo_range("I") should return [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30].
+Passed:3. get_bingo_range("N") should return [31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45].
+Passed:4. get_bingo_range("G") should return [46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60].
+Passed:5. get_bingo_range("O") should return [61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75].
+232425262728293031323334353637383940
+            return I
+        case "N":
+            return N
+        case "G":
+            return G
+        case "O":
+            return O
+        case _:
+            return "Invalid letter"
+    return letter
+113def get_bingo_range(letter):    for i in range(count):
+Submit and continue
+
+
+// running tests
+// tests completed
+// console output
+aaaaaaa 2
+aaaaaaa 2
+
+aaaaaaa 2
+
+aaaaaaa 2
+
+aaaaaaa 2
+
+aaaaaaa 2
+
+aaaaaaa 2
+
+aaaaaaa 2
+
+aaaaaaa 2
+
+aaaaaaa 2
+
+aaaaaaa 2
+
+aaaaaaa 2
+
+aaaaaaa 2
+
+aaaaaaa 2
+
+aaaaaaa 2
+
+aaaaaaa 2
+
+aaaaaaa [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] [31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45] [46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60] [61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75]
+Navigated to Daily Coding Challenge: Sleep Debt | freeCodeCamp.org
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+def get_bingo_range(letter):
+    B = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    print('aaaaaaa',B[1])
+    count = 15
+    a =16
+    b = 31
+    c = 46
+    d = 61
+    I = [15] * 15
+    N = [15] * 15
+    G = [15] * 15
+    O = [15] * 15
+    for i in range(count):
+        print('aaaaaaa',B[1])
+        I[i] = a
+        N[i] = b
+        G[i] = c
+        O[i] = d
+        
+        a+= 1
+        b+= 1
+        c+= 1
+        d+= 1
+        print()
+    print('aaaaaaa',B,I,N,G,O)
+
+    match letter:
+        case "B":
+            return B
+        case "I":
+            return I
+        case "N":
+            return N
+        case "G":
+            return G
+        case "O":
+            return O
+        case _:
+            return "Invalid letter"
+    return letter
