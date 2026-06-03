@@ -1,0 +1,122 @@
+Skip to content
+Search 12,600+ of our books and courses
+
+
+Menu
+Sign in
+Daily Coding Challenge
+June 3, 2026
+Instructions
+main.pyEditor
+JavaScript
+Python
+Console
+Hide the terminalTerminal
+Move the terminal to a new window and focus it
+Schema Validator Part 3
+Given an object (JavaScript) or dictionary (Python), determine if it matches the following schema:
+
+Roles = "user" | "creator" | "moderator" | "staff" | "admin"
+
+{
+  username: string,
+  posts: number,
+  verified: boolean,
+  role: Roles
+}
+The pipe (|) symbol means "or". role must be one of the listed Roles values.
+Extra keys are allowed
+Tests:
+Passed:1. is_valid_schema({"username": "henry", "posts": 0, "verified": True, "role": "staff"}) should return True.
+Passed:2. is_valid_schema({"username": "sara", "posts": 45, "verified": False, "role": "creator", "followers": 70}) should return True.
+Passed:3. is_valid_schema({"username": "penelope", "posts": 20, "verified": True, "role": "admin"}) should return True.
+Passed:4. is_valid_schema({"username": "kevin", "posts": 0, "verified": False, "role": "user"}) should return True.
+Passed:5. is_valid_schema({"username": "george", "posts": 15, "verified": True, "role": "moderator"}) should return True.
+Passed:6. is_valid_schema({"username": "david", "posts": 0, "verified": False, "role": "guest"}) should return False.
+Passed:7. is_valid_schema({"username": "wendy", "posts": 10, "verified": True}) should return False.
+Passed:8. is_valid_schema({"username": "fabian", "posts": 1, "verified": True, "role": True}) should return False.
+Passed:9. is_valid_schema({"username": 8, "posts": 1, "verified": True, "role": "user"}) should return False.
+Passed:10. is_valid_schema({"username": "penny", "posts": "10", "verified": True, "role": "staff"}) should return False.
+Passed:11. is_valid_schema({"username": "john", "posts": "1", "verified": "true", "role": "admin"}) should return False.
+72056417183198910111213141516212223
+        print("username is missing")
+        return False
+    if "posts" not in obj:
+        print("posts is missing")
+        return False
+    if "verified" not in obj:
+        print("verified is missing")
+        return False
+    if "role" not in obj:
+        print("role is missing")
+
+1def is_valid_schema(obj):
+Congratulations. Your code passes. Daily Coding Challenge 0% complete
+
+Congratulations. Your code passes.
+Daily Coding Challenge
+0% complete
+Sign in to save your progress
+Submit and continue
+
+
+// running tests
+// tests completed
+// console output
+4
+{'username': 'henry', 'posts': 0, 'verified': True, 'role': 'staff'}
+staff
+It's a string
+It's a integer
+It's a boolean
+It's a role
+Navigated to Learn to Code — For Free — Coding Courses for Busy People
+-------------------------------------------------------------------------------------
+def is_valid_schema(obj):
+    #obj = {"username": "wendy", "posts": 10, "verified": True}
+    Roles = ["user", "creator" , "moderator" , "staff","admin"]
+
+    skip = False
+    print(len(obj))
+    print(obj)
+    if "username" not in obj:
+        print("username is missing")
+        return False
+    if "posts" not in obj:
+        print("posts is missing")
+        return False
+    if "verified" not in obj:
+        print("verified is missing")
+        return False
+    if "role" not in obj:
+        print("role is missing")
+        return False
+    #if not obj["role"]:
+       # print("oops")
+    #print(obj["role"])
+    print(Roles[3])
+    if isinstance(obj["username"], str):
+        print("It's a string")
+    else:
+        print("It's not a string")
+        return False
+    if isinstance(obj["posts"], int):
+        print("It's a integer")
+    else:
+        print("It's not a integer")
+        return False
+    if obj["verified"] == True or obj["verified"] == False:
+        print("It's a boolean")
+    else:
+        print("It's not a boolean")
+        return False
+    for i in range(len(Roles)):
+        if obj["role"] == Roles[i]:
+            print("It's a role")
+            skip = True
+    if skip == False:
+        return False
+    
+        
+
+    return True #obj
