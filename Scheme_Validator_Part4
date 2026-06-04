@@ -1,0 +1,121 @@
+Skip to content
+Search 12,600+ of our books and courses
+
+
+Menu
+Sign in
+Daily Coding Challenge
+June 4, 2026
+Instructions
+main.pyEditor
+JavaScript
+Python
+Console
+Hide the terminalTerminal
+Move the terminal to a new window and focus it
+Schema Validator Part 4
+Given an object (JavaScript) or dictionary (Python), determine if it matches the following schema:
+
+Roles = "user" | "creator" | "moderator" | "staff" | "admin"
+
+{
+  username: string,
+  posts: number,
+  verified: boolean,
+  role: Roles,
+  supporter?: boolean
+}
+The pipe (|) symbol means "or". role must be one of the listed Roles values.
+The question mark (?) after supporter means that the field is optional, but is the specified type if it exists.
+Extra keys are allowed
+Tests:
+Passed:1. is_valid_schema({"username": "vivian", "posts": 1, "verified": False, "role": "user", "supporter": True}) should return True.
+Passed:2. is_valid_schema({"username": "rudolph", "posts": 15, "verified": True, "role": "creator"}) should return True.
+Passed:3. is_valid_schema({"username": "hernandez", "posts": 35, "verified": True, "role": "moderator", "supporter": False, "followers": 55}) should return True.
+Passed:4. is_valid_schema({"username": "julia", "posts": 50, "verified": True, "role": "admin", "supporter": "true"}) should return False.
+Passed:5. is_valid_schema({"username": "bernard", "posts": 0, "verified": True, "role": "friend", "supporter": True}) should return False.
+Passed:6. is_valid_schema({"username": "felix", "posts": 40, "verified": "yes", "role": "staff", "supporter": False}) should return False.
+Passed:7. is_valid_schema({"username": "jimmy", "posts": True, "verified": False, "role": "creator", "supporter": True}) should return False.
+Passed:8. is_valid_schema({"username": True, "posts": 30, "verified": True, "role": "moderator", "supporter": False}) should return False.
+293031323336373839404142434445463447484935
+    print(Roles[3])
+    if isinstance(obj["username"], str):
+        print("It's a string")
+    else:
+        print("It's not a string")
+        return False
+        #apparently python treats booleans as integers
+        #the below specifically checks integer type
+    if type(obj["posts"]) is int:
+
+129def is_valid_schema(obj):    if isinstance(obj["username"], str):
+Congratulations. Your code passes. Daily Coding Challenge 0% complete
+
+Congratulations. Your code passes.
+Daily Coding Challenge
+0% complete
+Sign in to save your progress
+Submit and continue
+
+
+
+/**
+* Your test output will go here
+*/
+Navigated to Daily Coding Challenge: Schema Validator Part 3 | freeCodeCamp.org
+---------------------------------------------------------------------------------------------
+def is_valid_schema(obj):
+    #obj = {"username": "wendy", "posts": 10, "verified": True}
+    Roles = ["user", "creator" , "moderator" , "staff","admin"]
+
+    skip = False
+    print(len(obj))
+    print(obj)
+    if "username" not in obj:
+        print("username is missing")
+        return False
+    if "posts" not in obj:
+        print("posts is missing")
+        return False
+    if "verified" not in obj:
+        print("verified is missing")
+        return False
+    if "role" not in obj:
+        print("role is missing")
+        return False
+    if "supporter" in obj:
+        if (obj["supporter"] == True or obj["supporter"] == False):
+            print("It's a boolean")
+        else:
+            return False
+    #if not obj["role"]:
+       # print("oops")
+    #print(obj["role"])
+    print(Roles[3])
+    if isinstance(obj["username"], str):
+        print("It's a string")
+    else:
+        print("It's not a string")
+        return False
+        #apparently python treats booleans as integers
+        #the below specifically checks integer type
+    if type(obj["posts"]) is int:
+        print("It's a integer")
+    else:
+        print("It's not a integer")
+        return False
+    if obj["verified"] == True or obj["verified"] == False:
+        print("It's a boolean")
+    else:
+        print("It's not a boolean")
+        return False
+    for i in range(len(Roles)):
+        if obj["role"] == Roles[i]:
+            print("It's a role")
+            skip = True
+    if skip == False:
+        return False
+    
+        
+
+    return True #obj
